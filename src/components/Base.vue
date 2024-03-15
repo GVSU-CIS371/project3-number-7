@@ -1,5 +1,5 @@
 <template>
-  <div class="baseBeverage"></div>
+  <div class="baseBeverage" :style="{'background-color': Bases.find(base => base.name === name)?.color}"></div>
 </template>
 
 <script setup lang="ts">

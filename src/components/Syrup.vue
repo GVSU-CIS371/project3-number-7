@@ -1,5 +1,5 @@
 <template>
-  <div class="syrup"></div>
+  <div class="syrup" :style="{'background-color': Syrups.find(syrup => syrup.name === name)?.color}"></div>
 </template>
 
 <script setup lang="ts">

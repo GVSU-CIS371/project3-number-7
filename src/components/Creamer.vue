@@ -1,6 +1,6 @@
 <template>
   <div class="froth">
-    <div v-for=" in 5" class="foam"></div>
+   <div v-for=" in 5" class="foam" :style="{'background-color': Creamers.find(creamer => creamer.name === name)?.color}"></div>
   </div>
 </template>
 
@@ -42,9 +42,14 @@ const props = withDefaults(defineProps<Prop>(), {
   background-color: #c6c6c6;
   animation: pour-tea 2s 2s forwards;
 }
+
+.color{
+  color: #ffffff;
+}
+
 .foam {
   display: block;
-  background: #e4e0d2;
+  background: #e4d2d2;
   border-radius: 30px;
   height: 40px;
   width: 40px;
