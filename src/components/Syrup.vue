@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+//import { computed } from "vue";
 type Prop = {
   name: string;
 };
@@ -26,7 +26,7 @@ const Syrups: Syrup[] = [
   },
 ];
 
-const props = withDefaults(defineProps<Prop>(), {
+withDefaults(defineProps<Prop>(), {
   name: "Vanilla",
 });
 </script>

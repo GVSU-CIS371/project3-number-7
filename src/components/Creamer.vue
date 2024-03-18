@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+//import { computed } from "vue";
 type Prop = {
   name: string;
 };
@@ -28,7 +28,7 @@ const Creamers: Creamer[] = [
   },
 ];
 
-const props = withDefaults(defineProps<Prop>(), {
+withDefaults(defineProps<Prop>(), {
   name: "Milk",
 });
 </script>
