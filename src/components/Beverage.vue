@@ -4,11 +4,20 @@
     <Hot v-else />
     <Contents>
       <template v-slot:top>
-        <Creamer :name="creamer" />
+          <template v-if="creamer !== 'None' && syrup !== 'None'">
+            <Creamer :name="creamer" />
+          </template>
       </template>
+
       <template v-slot:mid>
-        <Syrup :name="syrup"/>
+        <template v-if="syrup !== 'None' "> <!--if there is syrup, render it-->
+          <Syrup :name="syrup"/>
+        </template>
+        <template v-else-if="creamer !== 'None'"> <!--otherwise, if there is creamer, render it here. If neither, render none of these--> 
+          <Creamer :name="creamer" />
+        </template>
       </template>
+
       <template v-slot:bottom>
         <Base :name="beverage"/>
       </template>
@@ -31,4 +40,6 @@ type Props = {
   beverage: string;
 };
 defineProps<Props>();
+
+
 </script>
